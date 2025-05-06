@@ -52,10 +52,10 @@
     (let [norm-sep-x (normalized-separation-x ns-map)
           norm-sep-y (normalized-separation-y ns-map)]
       (if (> norm-sep-x norm-sep-y)
-        (if (Double/isInfinite norm-sep-x)
+        (if (infinite? norm-sep-x)
           (take 2 (distinct-by shape shapes))
           [y-max-lb-shape y-min-ub-shape])
-        (if (Double/isInfinite norm-sep-y)
+        (if (infinite? norm-sep-y)
           (take 2 (distinct-by shape shapes))
           [x-max-lb-shape x-min-ub-shape])))))
 
