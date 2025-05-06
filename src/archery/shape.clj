@@ -4,11 +4,11 @@
 
 (defn double-max ^double
 [^double a ^double b]
-  (Math/max a b))
+  (max a b))
 
 (defn double-min ^double
 [^double a ^double b]
-  (Math/min a b))
+  (min a b))
 
 (defn double-area ^double
 [^double x1 ^double y1 ^double x2 ^double y2]
