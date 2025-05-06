@@ -1,0 +1,3 @@
+{:paths ["src"]
+ :deps {io.github.jamesdavidson/clr.math.combinatorics {:git/sha "03cae1f04e1eca0d7296673ee9504f3ff8469951"}}
+ :aliases {:test {:extra-paths ["test"]}}}
