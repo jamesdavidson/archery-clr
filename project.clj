@@ -6,7 +6,7 @@
   :main ^:skip-aot archery.benchmark
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}}
-  :dependencies [[org.clojure/clojure "1.10.0"]
+  :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/math.combinatorics "0.1.4"]
                  [org.clojure/data.json "0.2.6"]
                  [criterium "0.4.4"]
