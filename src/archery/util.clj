@@ -7,7 +7,8 @@
     false
     (reduce #(or %1 %2) (map #(= %1 item) coll))))
 
-(defn abs "Absolute value of a number." [n] (max n (- n)))
+(compile-when (not (resolve 'abs))
+  (defn abs "Absolute value of a number." [n] (max n (- n))))
 
 (defn distinct-by
   "Returns a lazy sequence of the elements of coll, removing any elements that
