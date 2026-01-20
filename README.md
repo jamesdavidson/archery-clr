@@ -7,24 +7,30 @@ Clojure RTree implementation, using functional zippers. Very much a work in prog
 ## Examples
 To create and load an RTree with shapes:
 ```
-(use '[rtree.core])
+(ns user
+  (:require [archery.core :as archery]
+            [archery.node-split :refer [linear-split quadratic-split]]
+            [archery.shape :as shape]))
 
-; Default values, can also use {:node-split :linear}
-(def empty-tree (rtree {:node-split :quadratic,
-                        :min-children 2,
-                        :max-children 4}))
+; Default values, can also use {:node-split linear-split}
+(def empty-tree
+  (archery/rtree
+    {:node-split quadratic-split
+     :min-children 2
+     :max-children 4}))
 
 (def tree
-  (reduce insert empty-tree [(->Point 0.5 10.5)
-                             (->Point 33.3 45.0)
-                             (->Rectangle 0.0 0.0 10.0 10.0)
-                             (->Rectangle 5.0 15.0 30.0 55.0)
-                             (->Point 3.0 10.0)]))
+  (reduce archery/insert empty-tree
+    [(shape/->Point 0.5 10.5)
+     (shape/->Point 33.3 45.0)
+     (shape/->Rectangle 0.0 0.0 10.0 10.0)
+     (shape/->Rectangle 5.0 15.0 30.0 55.0)
+     (shape/->Point 3.0 10.0)]))
 ```
 
 You can also search by a shape that has an envelops? function:
 ```
-(search tree (->Rectangle 0.0 0.0 50.0 50.0))
+(archery/search tree (shape/->Rectangle 0.0 0.0 50.0 50.0))
 ;=>
 (#archery.shape.Point{:x 33.3, :y 45.0}
  #archery.shape.Rectangle{:x1 0.0, :y1 0.0, :x2 10.0, :y2 10.0}
