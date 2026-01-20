@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netframework2.0</TargetFrameworks>
+        <ImplicitUsings>disable</ImplicitUsings>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>archery</PackageId>
+        <RootNamespace>archery</RootNamespace>
+        <Title>archery</Title>
+        <Product>archery</Product>
+        <AssemblyTitle>archery</AssemblyTitle>
+        <Authors>Christian Gonzalez</Authors>
+        <Description>Clojure RTree implementation, using functional zippers.</Description>
+        <Copyright>Copyright © 2026 Christian Gonzalez (implied not specified)</Copyright>
+        <PackageLicenseExpression>EPL-1.0</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/jamesdavidson/archery-clr</RepositoryUrl>
+        <Company>ClojureCLR contributors</Company>
+        <PackageTags>Clojure;ClojureCLR</PackageTags>
+        <Version>$(PublishVersion)</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="clojure.math.combinatorics" Version="0.3.1-alpha0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource
+                LogicalName="archery.benchmark.clj"
+                Include="src/archery/benchmark.clj"
+                CopyToOutputDirectory="Never"
+        />
+        <EmbeddedResource
+                LogicalName="archery.core.clj"
+                Include="src/archery/core.clj"
+                CopyToOutputDirectory="Never"
+        />
+        <EmbeddedResource
+                LogicalName="archery.node_split.clj"
+                Include="src/archery/node_split.clj"
+                CopyToOutputDirectory="Never"
+        />
+        <EmbeddedResource
+                LogicalName="archery.shape.clj"
+                Include="src/archery/shape.clj"
+                CopyToOutputDirectory="Never"
+        />
+        <EmbeddedResource
+                LogicalName="archery.util.clj"
+                Include="src/archery/util.clj"
+                CopyToOutputDirectory="Never"
+        />
+        <EmbeddedResource
+                LogicalName="archery.visitor.clj"
+                Include="src/archery/visitor.clj"
+                CopyToOutputDirectory="Never"
+        />
+        <EmbeddedResource
+                LogicalName="archery.visualization.clj"
+                Include="src/archery/visualization.clj"
+                CopyToOutputDirectory="Never"
+        />
+        <EmbeddedResource
+                LogicalName="archery.zipper.clj"
+                Include="src/archery/zipper.clj"
+                CopyToOutputDirectory="Never"
+        />
+    </ItemGroup>
+
+</Project>
